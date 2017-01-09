@@ -28,3 +28,19 @@ $ pwd
 /Users/user/Downloads
 ```
 
+## Installation
+
+Install it from Homebrew and follow the message of caveats.
+As a dependency, [fzf][fzf] (command-line fuzzy finder by [junegunn][junegunn]) will be also installed.
+
+```bash
+$ brew tap snoopython/formulae
+$ brew install finder-cli
+...
+==> Caveats
+To enable finder-cli, add to your profile:
+  source /usr/local/etc/finder-cli/init.sh
+
+$ echo "source /usr/local/etc/finder-cli/init.sh" >> ~/.bashrc
+```
+
