@@ -1,5 +1,5 @@
 # finder-cli
-:mag: Mini command line interface for macOS to operate current Finder windows.
+:mag: Command line interface for macOS to operate current Finder windows.
 
 ## Usage
 
