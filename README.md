@@ -48,9 +48,6 @@ $ echo "source /usr/local/etc/finder-cli/init.sh" >> ~/.bashrc
 
 + If you open only one window in Finder, `fcd` will not show fzf prompt to directly `cd` to the one.
 + Front Finder window will be listed at the bottom of fzf prompt.
-+ If you use [enhancd][enhancd] (`cd` with an interactive filter by [b4b4r07][b4b4r07]), directories to be moved to by `fcd` will be also memorized so that you can move to it by `cd <directory>` from next time.
 
 [fzf]: https://github.com/junegunn/fzf
 [junegunn]: https://github.com/junegunn
-[enhancd]: https://github.com/b4b4r07/enhancd
-[b4b4r07]: https://github.com/b4b4r07
