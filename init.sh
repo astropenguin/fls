@@ -4,9 +4,12 @@
 # base directory where this script is located
 DIR_BASE="$(cd "$(dirname "${BASH_SOURCE[0]}" )" && pwd)"
 
+# For development purposes only. 
+DEV_BASE="~/Documents/Code\ Box/finder-cli/"
+
 # finder ls
 fls () {
-    echo "$(osascript ${DIR_BASE}/script/fls.scpt)"
+    echo "$(osascript ${DEV_BASE}/script/fls.scpt)"
 }
 
 # finder cd
@@ -18,7 +21,7 @@ fcd () {
 # Like finder ls, but includes permissions and other info. Equivalent of running ls -a
 
 fla () {
-    echo "$(osascript ${DIR_BASE}/script/fls.scpt)"
+    echo "$(osascript ${DIR_BASE}/script/fla.scpt)"
 }
 
 # finder chmod 
