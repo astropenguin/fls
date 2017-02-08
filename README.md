@@ -34,6 +34,7 @@ Install it from Homebrew and follow the message of caveats.
 As a dependency, [fzf][fzf] (command-line fuzzy finder by [junegunn][junegunn]) will be also installed.
 
 ```bash
+$ brew install ruby
 $ brew tap snoopython/formulae
 $ brew install finder-cli
 ...

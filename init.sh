@@ -29,39 +29,34 @@ fla () {
 # Allows for changing of permissions
 
 fmod () {
-
-}
-
-# finder chown
-# Allows for changing of owner
-
-fown () {
-
-}
-
-# finder chgrp
-# Allows for changing of groups
-
-fgrp () {
+  FOLDER=$(fls | fzf --select-1)
+  CURRENT_PERMISIONS=$(ruby ~/Documents/Code\ Box/finder-cli/script/permissions_reader.rb $(ls -ld $FOLDER))
+  echo "Current permissions: $CURRENT_PERMISIONS"
+  while true
+  do
+    echo "Enter new permissions: "
+    read NEW_PERMISSIONS
+    ruby validate_permission.rb $NEW_PERMISSIONS
+    case $? in
+      0) break ;;
+      1) echo "Not a valid permission octal!" ;;
+    esac
+  done
+  chmod -R $NEW_PERMISSIONS $FOLDER
 
 }
 
 # finder rm
 # Removes folders
 frm () {
-	FILE=$(fls | fzf --select-1)
+	FOLDER=$(fls | fzf --select-1)
 	while true; do
-    if [[ $CONFIRM != "" ]]
-    then
-  		echo "Confirm delete of $FILE (Y/N)"
-  		read CONFIRM
-  		case $CONFIRM in
-  			Y | y) rm -rf $FILE; break ;;
-  			N | n) break ;;
-  			*) echo "Please answer Y or N..." ;;
-  		esac
-    else
-      break
-    fi
+    echo "Confirm delete of $FOLDER (Y/N)"
+    read CONFIRM
+		case $CONFIRM in
+			Y | y) rm -rf $FOLDER; break ;;
+			N | n) break ;;
+			*) echo "Please answer Y or N..." ;;
+		esac
 	done
 }
