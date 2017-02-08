@@ -5,12 +5,9 @@
 DIR_BASE="$(cd "$(dirname "${BASH_SOURCE[0]}" )" && pwd)"
 
 
-# For development purposes only.
-DEV_BASE="~/Documents/Code\ Box/finder-cli"
-
 # finder ls
 fls () {
-    echo "$(osascript ~/Documents/Code\ Box/finder-cli/script/fls.scpt)"
+    echo "$(osascript ${DIR_BASE}/script/fls.scpt)"
 }
 
 # finder cd
@@ -22,7 +19,7 @@ fcd () {
 # Like finder ls, but includes permissions and other data. Equivalent of running ls -l
 
 fla () {
-    echo "$(osascript ~/Documents/Code\ Box/finder-cli/script/fla.scpt)"
+    echo "$(osascript ${DIR_BASE}/script/fla.scpt)"
 }
 
 # finder chmod
@@ -30,13 +27,13 @@ fla () {
 
 fmod () {
   FOLDER=$(fls | fzf --select-1)
-  CURRENT_PERMISIONS=$(ruby ~/Documents/Code\ Box/finder-cli/script/permissions_reader.rb $(ls -ld $FOLDER))
+  CURRENT_PERMISIONS=$(ruby ${DIR_BASE}/script/permissions_reader.rb $(ls -ld $FOLDER))
   echo "Current permissions: $CURRENT_PERMISIONS"
   while true
   do
     echo "Enter new permissions: "
     read NEW_PERMISSIONS
-    ruby validate_permission.rb $NEW_PERMISSIONS
+    ruby ${DIR_BASE}/script/validate_permission.rb $NEW_PERMISSIONS
     case $? in
       0) break ;;
       1) echo "Not a valid permission octal!" ;;
