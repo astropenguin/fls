@@ -6,7 +6,10 @@
 finder-cli provides the following commands:
 
 + `fls`: list full paths of current open Finder windows
++ `fla`: get more detailed info about current open Finder windows
 + `fcd`: select one from `fls` and `cd` to it
++ `frm`: select one from `fls` and remove it
++ `fmod`: select one from `fls` and change its permissions
 
 For example, if you open ~/Desktop and ~/Downloads windows in Finder:
 
