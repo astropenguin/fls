@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cat << EOS | osascript -l JavaScript | uniq
+let finder = Application("Finder");
+let paths = [];
+
+finder.windows().forEach(w => {
+    path = w.target().url().slice(7);
+	paths.push(decodeURI(path));
+});
+
+paths.join("\n")
+EOS
