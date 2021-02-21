@@ -1,5 +1,5 @@
 # fls
-:mag: List paths of current macOS Finder windows
+List paths of current macOS Finder windows
 
 ## Installation
 
